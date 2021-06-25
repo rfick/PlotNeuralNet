@@ -40,22 +40,15 @@
         height=3,width=1.5,depth=100}};
 %%%%%%%%%%
 % fc3spec
-\pic[shift={(1.5,0,5)}] at (fc2-east) {RightBandedBox={name=fc3spec,caption=fc3spec,%
+\pic[shift={(1.5,0,0)}] at (fc2-east) {RightBandedBox={name=fc3,caption=fc3,%
         xlabel={{"1","dummy"}},zlabel=K,fill=\FcColor,bandfill=\FcReluColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% fc3som
-\pic[shift={(1.5,0,-5)}] at (fc2-east) {RightBandedBox={name=fc3som,caption=fc3som,%
-        xlabel={{"1","dummy"}},zlabel={10x10},fill=\FcColor,bandfill=\FcReluColor,%
-        height=25,width=3,depth=25}};
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Draw Arrow Connections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \draw [connection]  (softmax1-east)       -- node {\midarrow} (fc2-west);
-\draw [connection]  (softmax2-east)       -- node {\midarrow} (fc3spec-west);
-\draw [connection]  (softmax2-east)       -- node {\midarrow} (fc3som-west);
-\draw [connection]  (fc3spec-east)   -- node {\midarrow} ++(1.5,0,0);
-\draw [connection]  (fc3som-east)   -- node {\midarrow} ++(1.5,0,0);
+\draw [connection]  (softmax2-east)       -- node {\midarrow} (fc3-west);
+\draw [connection]  (fc3-east)   -- node {\midarrow} ++(1.5,0,0);
 \end{tikzpicture}
 \end{document}
