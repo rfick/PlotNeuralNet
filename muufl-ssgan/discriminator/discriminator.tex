@@ -11,6 +11,7 @@
 \def\FcColor{rgb:blue,5;red,2.5;white,5}
 \def\FcReluColor{rgb:blue,5;red,5;white,4}
 \def\SoftmaxColor{rgb:magenta,5;black,7}
+\def\WeightNormColor{rgb:yellow,5;red,2.5;white,5}
 
 \begin{document}
 \begin{tikzpicture}
@@ -22,144 +23,84 @@
 \node[canvas is zy plane at x=0] (temp) at (0,0,-13) {\includegraphics[width=10cm,height=10cm]{../../images/som_weights.png}};
 % fc1spec
 \pic[shift={(3,0,13)}] at (0,0,0) {RightBandedBox={name=fc1spec,caption=fc1spec,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=100}};
-%%%%%%%%%%
-% softmax1spec
-\pic[shift={(0,0,0)}] at (fc1spec-east) {Box={name=softmax1spec,%
-        xlabel={{"","dummy"}},zlabel=1000,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=100}};
 %%%%%%%%%%
 % fc1som
 \pic[shift={(3,0,-13)}] at (0,0,0) {RightBandedBox={name=fc1som,caption=fc1som,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=100}};
-%%%%%%%%%%
-% softmax1som
-\pic[shift={(0,0,0)}] at (fc1som-east) {Box={name=softmax1som,%
-        xlabel={{"","dummy"}},zlabel=1000,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=100}};
 %%%%%%%%%%
 % fc2spec
 \pic[shift={(3,0,0)}] at (fc1spec-east) {RightBandedBox={name=fc2spec,caption=fc2spec,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=50}};
-%%%%%%%%%%
-% softmax2spec
-\pic[shift={(0,0,0)}] at (fc2spec-east) {Box={name=softmax2spec,%
-        xlabel={{"","dummy"}},zlabel=500,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=50}};
 %%%%%%%%%%
 % fc2som
 \pic[shift={(3,0,0)}] at (fc1som-east) {RightBandedBox={name=fc2som,caption=fc2som,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=50}};
-%%%%%%%%%%
-% softmax2som
-\pic[shift={(0,0,0)}] at (fc2som-east) {Box={name=softmax2som,%
-        xlabel={{"","dummy"}},zlabel=500,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=50}};
 %%%%%%%%%%
 % fc3spec
 \pic[shift={(3,0,0)}] at (fc2spec-east) {RightBandedBox={name=fc3spec,caption=fc3spec,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% softmax3spec
-\pic[shift={(0,0,0)}] at (fc3spec-east) {Box={name=softmax3spec,%
-        xlabel={{"","dummy"}},zlabel=250,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=25}};
 %%%%%%%%%%
 % fc3som
 \pic[shift={(3,0,0)}] at (fc2som-east) {RightBandedBox={name=fc3som,caption=fc3som,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% softmax3som
-\pic[shift={(0,0,0)}] at (fc3som-east) {Box={name=softmax3som,%
-        xlabel={{"","dummy"}},zlabel=250,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=25}};
 %%%%%%%%%%
 % fc4spec
 \pic[shift={(3,0,0)}] at (fc3spec-east) {RightBandedBox={name=fc4spec,caption=fc4spec,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% softmax4spec
-\pic[shift={(0,0,0)}] at (fc4spec-east) {Box={name=softmax4spec,%
-        xlabel={{"","dummy"}},zlabel=250,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=25}};
 %%%%%%%%%%
 % fc4som
 \pic[shift={(3,0,0)}] at (fc3som-east) {RightBandedBox={name=fc4som,caption=fc4som,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% softmax4som
-\pic[shift={(0,0,0)}] at (fc4som-east) {Box={name=softmax4som,%
-        xlabel={{"","dummy"}},zlabel=250,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=25}};
 %%%%%%%%%%
 % fc5spec
 \pic[shift={(3,0,0)}] at (fc4spec-east) {RightBandedBox={name=fc5spec,caption=fc5spec,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% softmax5spec
-\pic[shift={(0,0,0)}] at (fc5spec-east) {Box={name=softmax5spec,%
-        xlabel={{"","dummy"}},zlabel=250,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=25}};
 %%%%%%%%%%
 % fc5som
 \pic[shift={(3,0,0)}] at (fc4som-east) {RightBandedBox={name=fc5som,caption=fc5som,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=25}};
-%%%%%%%%%%
-% softmax5som
-\pic[shift={(0,0,0)}] at (fc5som-east) {Box={name=softmax5som,%
-        xlabel={{"","dummy"}},zlabel=250,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=25}};
 %%%%%%%%%%
 % fc6spec
 \pic[shift={(3,0,0)}] at (fc5spec-east) {RightBandedBox={name=fc6spec,caption=fc6spec,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=5}};
-%%%%%%%%%%
-% softmax6spec
-\pic[shift={(0,0,0)}] at (fc6spec-east) {Box={name=softmax6spec,%
-        xlabel={{"","dummy"}},zlabel={K},opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=5}};
 %%%%%%%%%%
 % fc6som
 \pic[shift={(3,0,0)}] at (fc5som-east) {RightBandedBox={name=fc6som,caption=fc6som,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+        xlabel={{"1",""}},fill=\WeightNormColor,bandfill=\SoftmaxColor,%
         height=3,width=3,depth=1}};
 %%%%%%%%%%
-% softmax6som
-\pic[shift={(0,0,0)}] at (fc6som-east) {Box={name=softmax6som,%
-        xlabel={{"","dummy"}},zlabel=1,opacity=0.8,fill=\SoftmaxColor,%
-        height=3,width=1.5,depth=1}};
-%%%%%%%%%%
 % output
-\pic[shift={(7,0,-13)}] at (fc5spec-east) {RightBandedBox={name=output,caption=output,%
-        xlabel={{"1",""}},fill=\FcColor,bandfill=\FcReluColor,%
+\pic[shift={(7,0,-13)}] at (fc5spec-east) {Box={name=output,caption=output,%
+        xlabel={{"1",""}},fill=\FcColor,%
         height=3,width=3,depth=6}};
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Draw Arrow Connections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\draw [connection]  (softmax1spec-east)       -- node {\midarrow} (fc2spec-west);
-\draw [connection]  (softmax1som-east)       -- node {\midarrow} (fc2som-west);
-\draw [connection]  (softmax2spec-east)       -- node {\midarrow} (fc3spec-west);
-\draw [connection]  (softmax2som-east)       -- node {\midarrow} (fc3som-west);
-\draw [connection]  (softmax3spec-east)       -- node {\midarrow} (fc4spec-west);
-\draw [connection]  (softmax3som-east)       -- node {\midarrow} (fc4som-west);
-\draw [connection]  (softmax4spec-east)       -- node {\midarrow} (fc5spec-west);
-\draw [connection]  (softmax4som-east)       -- node {\midarrow} (fc5som-west);
-\draw [connection]  (softmax5spec-east)       -- node {\midarrow} (fc6spec-west);
-\draw [connection]  (softmax5som-east)       -- node {\midarrow} (fc6som-west);
-\draw [connection]  (softmax6spec-east)   -- node {\midarrow} (output-west);
-\draw [connection]  (softmax6som-east)   -- node {\midarrow} (output-west);
+\draw [connection]  (fc1spec-east)       -- node {\midarrow} (fc2spec-west);
+\draw [connection]  (fc1som-east)       -- node {\midarrow} (fc2som-west);
+\draw [connection]  (fc2spec-east)       -- node {\midarrow} (fc3spec-west);
+\draw [connection]  (fc2som-east)       -- node {\midarrow} (fc3som-west);
+\draw [connection]  (fc3spec-east)       -- node {\midarrow} (fc4spec-west);
+\draw [connection]  (fc3som-east)       -- node {\midarrow} (fc4som-west);
+\draw [connection]  (fc4spec-east)       -- node {\midarrow} (fc5spec-west);
+\draw [connection]  (fc4som-east)       -- node {\midarrow} (fc5som-west);
+\draw [connection]  (fc5spec-east)       -- node {\midarrow} (fc6spec-west);
+\draw [connection]  (fc5som-east)       -- node {\midarrow} (fc6som-west);
+\draw [connection]  (fc6spec-east)   -- node {\midarrow} (output-west);
+\draw [connection]  (fc6som-east)   -- node {\midarrow} (output-west);
 \draw [connection]  (output-east)   -- node {\midarrow} ++(1.5,0,0);
 \end{tikzpicture}
 \end{document}

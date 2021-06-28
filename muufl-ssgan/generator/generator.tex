@@ -11,6 +11,7 @@
 \def\FcColor{rgb:blue,5;red,2.5;white,5}
 \def\FcReluColor{rgb:blue,5;red,5;white,4}
 \def\SoftmaxColor{rgb:magenta,5;black,7}
+\def\WeightNormColor{rgb:yellow,5;red,2.5;white,5}
 
 \begin{document}
 \begin{tikzpicture}
@@ -39,16 +40,16 @@
         xlabel={{"","dummy"}},zlabel=500,opacity=0.8,fill=\SoftmaxColor,%
         height=3,width=1.5,depth=100}};
 %%%%%%%%%%
-% fc3spec
-\pic[shift={(1.5,0,0)}] at (fc2-east) {RightBandedBox={name=fc3,caption=fc3,%
-        xlabel={{"1","dummy"}},zlabel=K,fill=\FcColor,bandfill=\FcReluColor,%
+% weight_norm1
+\pic[shift={(1.5,0,0)}] at (fc2-east) {Box={name=weightnorm1,caption=weightnorm1,%
+        xlabel={{"1","dummy"}},zlabel=K,fill=\WeightNormColor,%
         height=3,width=3,depth=25}};
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Draw Arrow Connections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \draw [connection]  (softmax1-east)       -- node {\midarrow} (fc2-west);
-\draw [connection]  (softmax2-east)       -- node {\midarrow} (fc3-west);
-\draw [connection]  (fc3-east)   -- node {\midarrow} ++(1.5,0,0);
+\draw [connection]  (softmax2-east)       -- node {\midarrow} (weightnorm1-west);
+\draw [connection]  (weightnorm1-east)   -- node {\midarrow} ++(1.5,0,0);
 \end{tikzpicture}
 \end{document}
